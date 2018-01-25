@@ -3,6 +3,7 @@ const proxy = require('http-proxy-middleware');
 
 const do_proxy = (path, target) => proxy(path, {
 	target: target,
+	secure: true,
 	changeOrigin: true,
 	cookieDomainRewrite: "localhost",
 	logLevel: 'debug',
@@ -11,8 +12,8 @@ const do_proxy = (path, target) => proxy(path, {
 
 const proxies = [
 	['/search/feedback', 'http://search-feedback-service.apps.prod.cirrostratus.org'],
-	['/labs', 'http://firefly.jstor.org'],
-	['/myjstor', 'http://firefly.jstor.org']
+	['/labs', 'https://firefly.jstor.org'],
+	['/', 'https://firefly.jstor.org']
 ]
 
 const app = express()
