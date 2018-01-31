@@ -11,7 +11,7 @@ const do_proxy = (path, target) => proxy(path, {
 })
 
 const proxies = [
-	['/search/feedback', 'http://search-feedback-service.apps.prod.cirrostratus.org'],
+	['/search/feedback', 'http://search-feedback-service.apps.test.cirrostratus.org'],
 	['/labs', 'https://firefly.jstor.org'],
 	['/', 'https://firefly.jstor.org']
 ]
